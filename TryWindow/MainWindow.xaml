@@ -7,7 +7,7 @@
         xmlns:ae="http://icsharpcode.net/sharpdevelop/avalonedit"
         Closing="Window_Closing"
         mc:Ignorable="d"
-        Title="Expression Evaluate" Width="400" Height="300">
+        Title="Expression Evaluate" Width="400" Height="320">
     <DockPanel>
 
         <StackPanel DockPanel.Dock="Bottom">
@@ -15,9 +15,21 @@
                 <Label DockPanel.Dock="Left" 
                        Content="Iterations"
                        Padding="2,0"/>
+                <CheckBox x:Name="UseCachesCheckbox" 
+                          Content="Use Caches" 
+                          DockPanel.Dock="Right"
+                          VerticalAlignment="Center"
+                          Margin="5,0"/>
                 <TextBox x:Name="IterationsTextBox"
                          Text="1" />
+                
             </DockPanel>
+
+            <WrapPanel>
+                <CheckBox x:Name="NeedSemicolonAtTheEndCheckBox"
+                          Content="Need semicolon [;] At the end" />
+            </WrapPanel>
+            
             <Button x:Name="CalculateButton" Content="_Execute" IsDefault="True" Click="CalculateButton_Click" />
             <Button x:Name="CancelButton" 
                     Content="_Cancel" 
@@ -40,6 +52,7 @@
                            HorizontalScrollBarVisibility="Auto"
                            VerticalScrollBarVisibility="Auto"/>
         </Border>
-        
+
     </DockPanel>
 </Window>
+
